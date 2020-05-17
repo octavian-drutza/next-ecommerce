@@ -1,0 +1,26 @@
+{
+  "name": "next-ecommerce",
+  "version": "1.0.0",
+  "description": "Home Work lesson 28",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octavian-drutza/next-ecommerce.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/octavian-drutza/next-ecommerce/issues"
+  },
+  "homepage": "https://github.com/octavian-drutza/next-ecommerce#readme",
+  "dependencies": {
+    "next": "^9.4.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
