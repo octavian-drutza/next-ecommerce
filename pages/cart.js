@@ -1,12 +1,20 @@
-import Layout from '../components/layout';
+import React from 'react';
+import { Grid } from "@material-ui/core";
+import Container from '@material-ui/core/Container';
+import { useGlobal} from '../src/context/GlobalContext';
+import CartItem from '../components/CartItem';
 
-const Cart = () => (
-    <Layout>
-        <div>
-            <h1>Cart</h1>
-            <h4>What Cart?</h4>
-        </div>
-    </Layout>
-);
 
-export default Cart;
+export default () => {
+
+  const [ state, dispatch ] = useGlobal();
+
+    return (
+        <Container maxWidth="md">
+            <h1>Your shopping cart:</h1>
+            <Grid container spacing={1} alignItems="stretch">  
+              { state.cart.map((product, index) => <CartItem key={index} product={product} /> )}
+            </Grid>
+        </Container>
+    )
+}
