@@ -16,6 +16,9 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Link from '../src/Link';
+import {useGlobal} from '../src/context/GlobalContext';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -98,6 +101,8 @@ export default function PrimarySearchAppBar() {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const [state] =useGlobal();
+  const cartCounter= state.cart.length;
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -146,28 +151,29 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="primary">
-          <Badge badgeContent={4} color="secondary">
-            <MailIcon />
+      
+      <MenuItem href="/cart">
+        <IconButton aria-label={`show ${cartCounter} product`} color="inherit">
+          <Badge badgeContent={cartCounter} color="secondary">
+            <ShoppingCartIcon />
           </Badge>
         </IconButton>
-        <p>Messages</p>
+        <p>Cart</p>
       </MenuItem>
-      <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="primary">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
+      <MenuItem href="/wishlist">
+        <IconButton /* aria-label={`show ${wishListCounter} product`} */ color="primary">
+          <Badge /* badgeContent={wishListCounter} */ color="secondary">
+            <FavoriteBorderIcon />
           </Badge>
         </IconButton>
-        <p>Notifications</p>
+        <p>Favorites</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
-          color="primary"
+          color="inherit"
         >
           <AccountCircle />
         </IconButton>
@@ -211,18 +217,20 @@ export default function PrimarySearchAppBar() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-              <Link href='/cart'>
-                <IconButton aria-label="show 2 products" color="primary">
-                    <Badge badgeContent={2} color="secondary">
-                        <ShoppingCartIcon />
-                    </Badge>
-                </IconButton>
-              </Link>
-            <IconButton aria-label="show 17 new notifications" color="primary">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
+            <Link href='/cart'>
+              <IconButton aria-label={`show ${cartCounter} qty`} color="primary">
+                <Badge badgeContent={cartCounter} color="secondary">
+                    <ShoppingCartIcon />
+                </Badge>
+              </IconButton>
+            </Link>
+            <Link href="/wishlist">
+              <IconButton /* aria-label={`show ${wishListCounter} product`} */ color="primary">
+                <Badge /* badgeContent={wishListCounter} */ color="secondary">
+                  <FavoriteBorderIcon />
+                </Badge>
+              </IconButton>
+            </Link>
             <IconButton
               edge="end"
               aria-label="account of current user"

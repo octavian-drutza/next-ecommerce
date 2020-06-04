@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }), { name: 'ProductItem' });
 
-export default function CartItem({product}) {
+export default function WishListItem({product}) {
   const classes = useStyles();
   const [ state, dispatch ] = useGlobal();
 
@@ -68,7 +68,7 @@ export default function CartItem({product}) {
                     }
                     
                     dispatch({
-                      type: 'REMOVE_FROM_BAG',
+                      type: 'REMOVE_FROM_WISHLIST',
                       payload: {
                         id: product.id,
                       }
@@ -99,7 +99,7 @@ export default function CartItem({product}) {
                     }
                   } */
                 >
-                  Move to wishlist
+                  Move to Cart
               </Button>
               </Grid>
             </Grid>

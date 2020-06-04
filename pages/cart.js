@@ -12,7 +12,8 @@ export default () => {
     return (
         <Container maxWidth="md">
             <h1>Your shopping cart:</h1>
-            <Grid container spacing={1} alignItems="stretch">  
+            <Grid container spacing={1} alignItems="stretch">
+              {!state.cart.length && <h2>Empty Cart!</h2>}   
               { state.cart.map((product, index) => <CartItem key={index} product={product} /> )}
             </Grid>
         </Container>
