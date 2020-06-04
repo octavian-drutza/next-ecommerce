@@ -5,6 +5,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
 import PrimarySearchAppBar from '../components/PrimarySearchAppBar';
+import Footer from '../components/Footer';
 import { GlobalProvider } from '../src/context/GlobalContext';
 
 export default function MyApp(props) {
@@ -30,6 +31,7 @@ export default function MyApp(props) {
             <CssBaseline />
             <PrimarySearchAppBar />
             <Component {...pageProps} />
+            <Footer />
           </GlobalProvider>
         </ThemeProvider>
       </React.Fragment>
