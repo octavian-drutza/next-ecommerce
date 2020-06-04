@@ -84,10 +84,17 @@ export default function CartItem({product}) {
                   color="primary"
                   variant="contained" 
                   fullWidth
-/*                   onClick={ (evt) => {
+                  onClick={ (evt) => {
                       if (evt) {
                         evt.preventDefault();
                       }
+
+                      dispatch({
+                        type: 'REMOVE_FROM_BAG',
+                        payload: {
+                          id: product.id,
+                        }
+                      });
                       
                       dispatch({
                         type: 'ADD_TO_WISHLIST',
@@ -97,7 +104,7 @@ export default function CartItem({product}) {
                         }
                       });
                     }
-                  } */
+                  }
                 >
                   Move to wishlist
               </Button>

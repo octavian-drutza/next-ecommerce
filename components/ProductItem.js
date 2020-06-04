@@ -66,7 +66,6 @@ export default function ProductItem({product}) {
                     if (evt) {
                       evt.preventDefault();
                     }
-                    
                     dispatch({
                       type: 'ADD_TO_BAG',
                       payload: {
@@ -85,7 +84,7 @@ export default function ProductItem({product}) {
                   color="primary"
                   variant="contained" 
                   fullWidth
-/*                   onClick={ (evt) => {
+                  onClick={ (evt) => {
                       if (evt) {
                         evt.preventDefault();
                       }
@@ -98,7 +97,7 @@ export default function ProductItem({product}) {
                         }
                       });
                     }
-                  } */
+                  }
                 >
                   Add to wishlist
               </Button>

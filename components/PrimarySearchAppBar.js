@@ -103,6 +103,7 @@ export default function PrimarySearchAppBar() {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const [state] =useGlobal();
   const cartCounter= state.cart.length;
+  const wishListCounter= state.wishlist.length;
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -161,8 +162,8 @@ export default function PrimarySearchAppBar() {
         <p>Cart</p>
       </MenuItem>
       <MenuItem href="/wishlist">
-        <IconButton /* aria-label={`show ${wishListCounter} product`} */ color="primary">
-          <Badge /* badgeContent={wishListCounter} */ color="secondary">
+        <IconButton  aria-label={`show ${wishListCounter} product`} color="primary">
+          <Badge badgeContent={wishListCounter} color="secondary">
             <FavoriteBorderIcon />
           </Badge>
         </IconButton>
@@ -225,8 +226,8 @@ export default function PrimarySearchAppBar() {
               </IconButton>
             </Link>
             <Link href="/wishlist">
-              <IconButton /* aria-label={`show ${wishListCounter} product`} */ color="primary">
-                <Badge /* badgeContent={wishListCounter} */ color="secondary">
+              <IconButton  aria-label={`show ${wishListCounter} product`}  color="primary">
+                <Badge badgeContent={wishListCounter} color="secondary">
                   <FavoriteBorderIcon />
                 </Badge>
               </IconButton>

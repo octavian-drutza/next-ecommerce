@@ -84,20 +84,26 @@ export default function WishListItem({product}) {
                   color="primary"
                   variant="contained" 
                   fullWidth
-/*                   onClick={ (evt) => {
+                  onClick={ (evt) => {
                       if (evt) {
                         evt.preventDefault();
                       }
-                      
                       dispatch({
-                        type: 'ADD_TO_WISHLIST',
+                        type: 'REMOVE_FROM_WISHLIST',
+                        payload: {
+                          id: product.id,
+                        }
+                      });
+                        
+                      dispatch({
+                        type: 'ADD_TO_BAG',
                         payload: {
                           id: product.id,
                           qty: 1
                         }
                       });
                     }
-                  } */
+                  }
                 >
                   Move to Cart
               </Button>
