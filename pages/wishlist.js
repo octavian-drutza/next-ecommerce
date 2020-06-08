@@ -11,7 +11,7 @@ export default () => {
 
     return (
         <Container maxWidth="md">
-            <h1>Your shopping cart:</h1>
+            <h1>Your Wish List:</h1>
             <Grid container spacing={1} alignItems="stretch">
               {!state.wishlist.length && <h2>Nothing in your WishList!</h2>}   
               { state.wishlist.map((product, index) => <WishListItem key={index} product={product} /> )}

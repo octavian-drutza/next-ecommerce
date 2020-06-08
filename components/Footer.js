@@ -1,33 +1,48 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import BottomNavigation from "@material-ui/core/BottomNavigation";
+import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 
 const useStyles = makeStyles({
   root: {
-    width: '100%',
+    width: "100%",
     marginTop: 20,
     backgroundColor: "#e6f91c",
+    position: "fixed",
+    bottom: 0,
+    opacity: 0.9,
   },
-  
 });
 
 export default function Footer() {
   const classes = useStyles();
-  const [value, setValue] = React.useState('recents');
+  const [value, setValue] = React.useState("recents");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
-      <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />
-      <BottomNavigationAction label="Your Cart" value="shopping-cart" icon={<ShoppingCartIcon />} />
+    <BottomNavigation
+      value={value}
+      onChange={handleChange}
+      className={classes.root}
+    >
+      <BottomNavigationAction
+        label="Favorites"
+        value="favorites"
+        icon={<FavoriteIcon />}
+        href="/wishlist"
+      />
+      <BottomNavigationAction
+        label="Your Cart"
+        value="shopping-cart"
+        icon={<ShoppingCartIcon />}
+        href="/cart"
+      />
     </BottomNavigation>
   );
 }
