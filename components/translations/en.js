@@ -1,9 +1,9 @@
 export const en = {
     'product.menu.label': 'Products',
     'home.page.title': 'Home',
-    'product.button.buy': 'Add to Bag',
-    'product.buttton.wish': 'Add to wishlist',
-    'product.button.movetowish': 'Move to wishlist',
+    'product.button.buy': 'Add to',
+    'product.buttton.wish': 'Add to',
+    'product.button.movetowish': 'Move to ',
     'product.button.remove': 'Delete product',
-    'product.button.movetocart': 'Move to cart'
+    'product.button.movetocart': 'Move to '
 };

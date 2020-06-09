@@ -13,6 +13,8 @@ import {
 } from "@material-ui/core";
 import { useGlobal } from "../src/context/GlobalContext";
 import Link from "../src/Link";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -84,7 +86,7 @@ export default function CartItem({ product }) {
                   });
                 }}
               >
-                <FormattedMessage id='product.button.remove' />
+                <FormattedMessage id='product.button.remove' /><DeleteIcon />
               </Button>
             </Grid>
             <Grid item xs={12} md={6}>
@@ -114,7 +116,7 @@ export default function CartItem({ product }) {
                   });
                 }}
               >
-                <FormattedMessage id='product.button.movetowish' />
+                <FormattedMessage id='product.button.movetowish' /><FavoriteBorderIcon />
               </Button>
             </Grid>
           </Grid>

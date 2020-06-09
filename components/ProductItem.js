@@ -13,6 +13,8 @@ import {
 } from "@material-ui/core";
 import { useGlobal } from "../src/context/GlobalContext";
 import Link from "../src/Link";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -78,7 +80,7 @@ export default function ProductItem({ product }) {
                   });
                 }}
               >
-                <FormattedMessage id='product.button.buy' />
+                <FormattedMessage id='product.button.buy' /><ShoppingCartIcon />
               </Button>
             </Grid>
             <Grid item xs={12} md={6}>
@@ -101,7 +103,7 @@ export default function ProductItem({ product }) {
                   });
                 }}
               >
-                <FormattedMessage id='product.buttton.wish' />
+                <FormattedMessage id='product.buttton.wish' /><FavoriteBorderIcon />
               </Button>
             </Grid>
           </Grid>

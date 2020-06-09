@@ -9,10 +9,12 @@ import {
   CardMedia,
   Card,
   CardActionArea,
-  Button,
+  Button
 } from "@material-ui/core";
 import { useGlobal } from "../src/context/GlobalContext";
 import Link from "../src/Link";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -83,7 +85,7 @@ export default function WishListItem({ product }) {
                   });
                 }}
               >
-                <FormattedMessage id='product.button.remove' />
+                <FormattedMessage id='product.button.remove' /><DeleteIcon />
               </Button>
             </Grid>
             <Grid item xs={12} md={6}>
@@ -112,7 +114,7 @@ export default function WishListItem({ product }) {
                   });
                 }}
               >
-                <FormattedMessage id='product.button.movetocart' />
+                <FormattedMessage id='product.button.movetocart' /><ShoppingCartIcon />
               </Button>
             </Grid>
           </Grid>

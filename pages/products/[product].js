@@ -8,6 +8,8 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import TabPanel from '../../components/TabPanel';
 import SlideShow from '../../components/SlideShow';
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
 
 
@@ -96,7 +98,7 @@ const ProductPage = (props) => {
                   });
                 }}
               >
-                <FormattedMessage id='product.button.buy' />
+                <FormattedMessage id='product.button.buy' /><ShoppingCartIcon />
               </Button>
             </div>
             <div>
@@ -120,7 +122,7 @@ const ProductPage = (props) => {
                   });
                 }}
               >
-                <FormattedMessage id='product.button.movetowish' />
+                <FormattedMessage id='product.button.movetowish' /><FavoriteBorderIcon />
               </Button>
             </div>
           </div>
