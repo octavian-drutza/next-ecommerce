@@ -2,7 +2,8 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import { useGlobal } from "../src/context/GlobalContext";
-import CartItem from "../components/CartItem";
+import CartItem from "../components/legacy/CartItem";
+
 
 export default () => {
   const [state, dispatch] = useGlobal();

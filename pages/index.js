@@ -1,10 +1,21 @@
 import React from 'react';
-import {FormattedMessage} from 'react-intl';
+import ProductCategories from '../components/views/ProductCategories';
+import ProductSmokingHero from '../components/views/ProductSmokingHero';
+import ProductHero from '../components/views/ProductHero';
+import ProductValues from '../components/views/ProductValues';
+import ProductHowItWorks from '../components/views/ProductHowItWorks';
+import ProductCTA from '../components/views/ProductCTA';
 
 export default () => {
+
     return (
-        <div>
-            <h1><FormattedMessage id='home.page.title' /></h1>
-        </div>
-    );
+        <>
+          <ProductHero />
+          <ProductValues />
+          <ProductCategories />
+          <ProductHowItWorks />
+          <ProductCTA />
+          <ProductSmokingHero />
+        </>
+      );
 };

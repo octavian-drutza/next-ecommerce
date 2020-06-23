@@ -58,7 +58,7 @@ const SlideShow = ({ slides = [], thumbnails = [], initialSlide = 0, }) => {
           />
         </Grid>
         <Grid container spacing={2}>
-          <Grid xs={12}>
+          <Grid item xs={12}>
             <Typography variant="h5" gutterBottom>
               {slides[activeSlide].alt}
             </Typography>

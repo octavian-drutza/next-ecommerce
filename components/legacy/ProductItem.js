@@ -9,12 +9,12 @@ import {
   CardMedia,
   Card,
   CardActionArea,
-  Button
+  Button,
 } from "@material-ui/core";
-import { useGlobal } from "../src/context/GlobalContext";
-import Link from "../src/Link";
+import { useGlobal } from "../../src/context/GlobalContext";
+import Link from "../../src/Link";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import DeleteIcon from '@material-ui/icons/Delete';
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
 const useStyles = makeStyles(
   (theme) => ({
@@ -31,7 +31,7 @@ const useStyles = makeStyles(
   { name: "ProductItem" }
 );
 
-export default function WishListItem({ product }) {
+export default function ProductItem({ product }) {
   const classes = useStyles();
   const [state, dispatch] = useGlobal();
 
@@ -46,7 +46,7 @@ export default function WishListItem({ product }) {
               title={product.name}
             />
           </Link>
-
+          
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
               {product.name}
@@ -54,13 +54,8 @@ export default function WishListItem({ product }) {
             <Typography variant="body2" color="textSecondary" component="p">
               {product.description}
             </Typography>
-            <Typography
-              variant="body2"
-              component="p"
-              align="center"
-              fontSize={16}
-            >
-              {product.price}
+            <Typography gutterBottom variant="h6" component="h2">
+              $ {product.price}
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -76,16 +71,16 @@ export default function WishListItem({ product }) {
                   if (evt) {
                     evt.preventDefault();
                   }
-
                   dispatch({
-                    type: "REMOVE_FROM_WISHLIST",
+                    type: "ADD_TO_BAG",
                     payload: {
                       id: product.id,
+                      qty: 1,
                     },
                   });
                 }}
               >
-                <FormattedMessage id='product.button.remove' /><DeleteIcon />
+                <FormattedMessage id='product.button.buy' /><ShoppingCartIcon />
               </Button>
             </Grid>
             <Grid item xs={12} md={6}>
@@ -98,15 +93,9 @@ export default function WishListItem({ product }) {
                   if (evt) {
                     evt.preventDefault();
                   }
-                  dispatch({
-                    type: "REMOVE_FROM_WISHLIST",
-                    payload: {
-                      id: product.id,
-                    },
-                  });
 
                   dispatch({
-                    type: "ADD_TO_BAG",
+                    type: "ADD_TO_WISHLIST",
                     payload: {
                       id: product.id,
                       qty: 1,
@@ -114,7 +103,7 @@ export default function WishListItem({ product }) {
                   });
                 }}
               >
-                <FormattedMessage id='product.button.movetocart' /><ShoppingCartIcon />
+                <FormattedMessage id='product.buttton.wish' /><FavoriteBorderIcon />
               </Button>
             </Grid>
           </Grid>

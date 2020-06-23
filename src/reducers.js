@@ -1,4 +1,3 @@
-import WishListItem from "../components/WishListItem";
 
 export function globalReducer (state, action) {
     const {

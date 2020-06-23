@@ -6,8 +6,8 @@ import { useGlobal } from '../../src/context/GlobalContext';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import TabPanel from '../../components/TabPanel';
-import SlideShow from '../../components/SlideShow';
+import TabPanel from '../../components/legacy/TabPanel';
+import SlideShow from '../../components/legacy/SlideShow';
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ProductPage = (props) => {
   const [ { products }, dispatch] = useGlobal();
-  const product = products.find(item => item.id === props.router.query.product) 
+  const product = products.find((item) => item.id === props.router.query.product) 
 
 
 
@@ -162,4 +162,4 @@ const ProductPage = (props) => {
   );
 };
 
-export default withRouter(ProductPage)
+export default withRouter(ProductPage);

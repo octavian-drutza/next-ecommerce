@@ -14,8 +14,8 @@ import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import Link from "../src/Link";
-import { useGlobal } from "../src/context/GlobalContext";
+import Link from "../views/Link";
+import { useGlobal } from "../../src/context/GlobalContext";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import Select from '@material-ui/core/Select';
 
@@ -43,9 +43,6 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       color: "#da1d20",
     },
-/*   LanguageSelector : {
-    marginLeft: 10,
-    }, */
   },
   search: {
     position: "relative",
@@ -257,6 +254,7 @@ export default function PrimarySearchAppBar({handleChangeLocale, locale}) {
               <AccountCircle />
             </IconButton>
             <Select
+              disableUnderline
               className={classes.langSelector}
               labelId="demo-simple-select-helper-label"
               id="demo-simple-select-helper"

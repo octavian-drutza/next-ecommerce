@@ -11,8 +11,8 @@ import {
   CardActionArea,
   Button,
 } from "@material-ui/core";
-import { useGlobal } from "../src/context/GlobalContext";
-import Link from "../src/Link";
+import { useGlobal } from "../../src/context/GlobalContext";
+import Link from "../../src/Link";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import DeleteIcon from '@material-ui/icons/Delete';
 
